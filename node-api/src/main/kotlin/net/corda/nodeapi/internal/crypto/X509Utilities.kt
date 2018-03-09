@@ -265,7 +265,9 @@ object X509Utilities {
         return JcaPKCS10CertificationRequestBuilder(subject, keyPair.public)
                 .addAttribute(BCStyle.E, DERUTF8String(email))
                 .addAttribute(ASN1ObjectIdentifier(CordaOID.X509_EXTENSION_CORDA_ROLE), certRole)
-                .build(signer)
+                .build(signer).apply {
+            require(isSignatureValid(JcaContentVerifierProviderBuilder().build(keyPair.public)))
+        }
     }
 
     fun createCertificateSigningRequest(subject: X500Principal, email: String, keyPair: KeyPair, certRole: CertRole = CertRole.NODE_CA): PKCS10CertificationRequest {
