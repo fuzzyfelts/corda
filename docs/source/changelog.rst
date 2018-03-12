@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+UNRELEASED
 ----------
 
 Here are brief summaries of what's changed between each snapshot release. This includes guidance on how to upgrade code
