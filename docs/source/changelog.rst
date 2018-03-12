@@ -1,11 +1,11 @@
 Changelog
 =========
 
-UNRELEASED
-----------
-
 Here are brief summaries of what's changed between each snapshot release. This includes guidance on how to upgrade code
 from the previous milestone release.
+
+UNRELEASED
+----------
 
 * Parsing of ``NodeConfiguration`` will now fail if unknown configuration keys are found.
 
